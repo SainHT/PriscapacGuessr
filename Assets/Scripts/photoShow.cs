@@ -13,13 +13,13 @@ public class photoShow : MonoBehaviour
     public GameObject results;
     [SerializeField] GameObject photoshow;
 
-    [SerializeField] int[] alreadyShown = new int[3]; // 0 - not shown, 1 - shown for all locations; change the size of the array to the number of locations
+    [SerializeField] int[] alreadyShown = new int[11]; // 0 - not shown, 1 - shown for all locations; change the size of the array to the number of locations
     [SerializeField] int index;
     int loop = 0; // change this to the number of locations
 
     public void Choose()
     {
-        if (loop >= 3){
+        if (loop >= 5){
             results.SetActive(true);
             DoPodium();
             return;
@@ -27,7 +27,7 @@ public class photoShow : MonoBehaviour
         photoshow.SetActive(true);
 
         index = Random.Range(0, photos.Length);
-        while (alreadyShown[index] == 1 && loop < 3) // change the number of locations
+        while (alreadyShown[index] == 1 && loop < 5) // change the number of locations
         {
             index = Random.Range(0, photos.Length);
         }
